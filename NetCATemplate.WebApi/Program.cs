@@ -10,8 +10,6 @@ var builder = WebApplication.CreateSlimBuilder(args);
 
 builder.Host.UseSerilog((context, loggerConfig) => loggerConfig.ReadFrom.Configuration(context.Configuration));
 
-builder.Services.ConfigureAppJsonSerializer();
-
 builder.Services.AddSwaggerGenWithAuth();
 
 builder.Services.AddApplication()
@@ -35,4 +33,10 @@ app.UseSerilogRequestLogging();
 
 app.UseExceptionHandler();
 
-app.Run();
+await app.RunAsync();
+
+// REMARK: Required for functional and integration tests to work.
+namespace NetCATemplate.WebApi
+{
+    public partial class Program;
+}

@@ -5,8 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>NetCATemplate.WebApi</RootNamespace>
-    <InvariantGlobalization>true</InvariantGlobalization>
-    <PublishAot>true</PublishAot>
+	<!--This is commented to avoid issues with AOT compilation. Topic: JSON Serializer definition-->
+    <!--<InvariantGlobalization>true</InvariantGlobalization>
+    <PublishAot>true</PublishAot>-->
   </PropertyGroup>
 
   <ItemGroup>
