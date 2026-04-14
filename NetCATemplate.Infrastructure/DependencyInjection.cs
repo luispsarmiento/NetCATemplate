@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NetCATemplate.Application.Abstractions.Data;
+using NetCATemplate.Infrastructure.Database;
 using NetCATemplate.Infrastructure.Time;
 using NetCATemplate.SharedKernel;
 
@@ -15,6 +17,8 @@ namespace NetCATemplate.Infrastructure
         private static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
+            services.AddDbContext<IApplicationDbContext, ApplicationDbContext>();
 
             return services;
         }
