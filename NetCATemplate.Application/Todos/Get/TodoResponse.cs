@@ -1,4 +1,6 @@
-﻿namespace NetCATemplate.Application.Todos.Get;
+﻿using NetCATemplate.Domain.Todos;
+
+namespace NetCATemplate.Application.Todos.Get;
 
 public sealed class TodoResponse
 {
@@ -6,4 +8,5 @@ public sealed class TodoResponse
     public string? Title { get; set; } 
     public DateOnly? DueBy { get; set; }
     public bool IsComplete {  get; set; }
+    public Priority Priority { get; set; }
 };

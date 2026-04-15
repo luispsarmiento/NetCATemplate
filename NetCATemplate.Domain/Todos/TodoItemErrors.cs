@@ -11,4 +11,12 @@ public static class TodoItemErrors
     public static Error NotFound(Guid todoItemId) => Error.NotFound(
         "TodoItems.NotFound",
         $"The to-do item with the Id = '{todoItemId}' was not found");
+
+    public static Error InvalidTitle() => Error.Problem(
+        "TodoItems.InvalidTitle",
+        "The title of a to-do item cannot be empty.");
+
+    public static Error AlreadyExists(Guid todoItemId) => Error.Problem(
+        "TodoItems.AlreadyExists",
+        $"The to-do item with the Id = '{todoItemId}' already exists.");
 }
